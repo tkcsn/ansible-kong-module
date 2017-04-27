@@ -75,7 +75,8 @@ class ModuleHelper:
     def get_response(self, response, state):
 
         if state == "present":
-            meta = json.dumps(response.content)
+            #meta = json.dumps(response.content)
+            meta = response.json()
             has_changed = response.status_code == 201
             
         if state == "absent":
